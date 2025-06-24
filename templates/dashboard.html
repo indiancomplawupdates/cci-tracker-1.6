@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>CCI Tracker 1.5 Admin</title></head>
+<body>
+    <h1>CCI Tracker Admin Panel</h1>
+    <h2>Subscribers</h2>
+    <ul>
+    {% for email in subscribers %}
+        <li>{{ email }}</li>
+    {% endfor %}
+    </ul>
+    <form action="/add-subscriber" method="post">
+        <input type="email" name="email" placeholder="New subscriber email" required>
+        <button type="submit">Add Subscriber</button>
+    </form>
+    <form action="/check-updates" method="post" style="margin-top:20px;">
+        <button type="submit">Manually Trigger Check</button>
+    </form>
+</body>
+</html>

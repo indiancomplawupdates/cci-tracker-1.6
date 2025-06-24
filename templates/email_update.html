@@ -1,0 +1,13 @@
+<html>
+<body>
+    <h2>🧾 New CCI Order(s) Alert!</h2>
+    <p>Hi {{ email }},</p>
+    <p>Here are the latest updates from CCI:</p>
+    <ul>
+    {% for item in updates %}
+        <li><strong>{{ item.section }}</strong>: <a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <p>— CCI Tracker 1.5</p>
+</body>
+</html>
