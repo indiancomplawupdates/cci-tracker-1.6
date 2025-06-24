@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
 from utils.scraper import check_for_updates
 from utils.emailer import send_update_email, send_fortune_email
 import uvicorn
@@ -10,7 +9,6 @@ import os
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 SUBSCRIBERS_FILE = "data/subscribers.json"
 
